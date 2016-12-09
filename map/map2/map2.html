@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chicago Gaming Stores</title>
+        <link rel="stylesheet" href="leaflet.css" />
+        <script src="leaflet.js"></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+          var map = L.map('map').setView([42.01, -87.7], 12);
+
+          L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 13,
+               minZoom: 4
+            }).addTo(map);
+
+var marker1 = L.marker([42.0561201,-87.8385171]).addTo(map);
+var marker2 = L.marker([41.983316,-87.6625027]).addTo(map);
+var marker3 = L.marker([41.9608501,-87.7565387]).addTo(map);
+var marker4 = L.marker([41.961008,-87.6854777]).addTo(map);
+
+
+
+marker1.bindPopup("Pastimes Comics");
+marker2.bindPopup("Dice Dojo");
+marker3.bindPopup("Maximum Distractions");
+marker4.bindPopup("Da Sorce");
+
+
+        </script>
+   </body>
+</html>
