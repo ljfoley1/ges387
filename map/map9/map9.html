@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NEIU Buildings</title>
+        <link rel="stylesheet" href="leaflet.css" />
+        <script src="leaflet.js"></script>
+
+    </head>
+
+    <body>
+        <div id="neiumap" style="height: 750px"></div>
+
+        <script type="text/javascript">
+
+          var neiumap = L.map('neiumap').setView([41.981, -87.718], 17);
+
+          L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoibGpmb2xleTEiLCJhIjoiY2l0M2Z5NXRyMHU2bDJvcGc2aGhwZWYwcSJ9.uIHlejuPOhyFAPve7tLmbA'
+}).addTo(neiumap);
+
+var bbhmarker = L.marker([41.980412,-87.716966]).addTo(neiumap);
+var libmarker = L.marker([41.9803821,-87.7191285]).addTo(neiumap);
+var parkmarker = L.marker([41.9803824,-87.7203018]).addTo(neiumap);
+var stumarker = L.marker([41.9813309,-87.7186411]).addTo(neiumap);
+var cbmmarker = L.marker([41.9824033,-87.7177577]).addTo(neiumap);
+
+bbhmarker.bindPopup("<b>Bernard J. Brommel Hall</b>: Many GES classes are held in this building.")
+libmarker.bindPopup("<b>Ronald Williams Library</b>: Open to all NEIU Students.")
+parkmarker.bindPopup("<b>Parking Garage</b>: Register your vehicle in order to park here.")
+stumarker.bindPopup("<b>Student Union Building</b>: The cafeteria and book store are located here.")
+cbmmarker.bindPopup("<b>College of Business and Management</b>: Some GES classes are held in this building.")
+
+        </script>
+   </body>
+</html>
